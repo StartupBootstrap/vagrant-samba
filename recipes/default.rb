@@ -27,7 +27,7 @@
 mount node['DevHost']['local_path'] do
     device node['DevHost']['path']
     fstype "cifs"
-    options "username=#{node['DevHost']['user']},password=#{node['DevHost']['password']},uid=#{node['nginx']['user']},gid=#{node['nginx']['user']},rw,noserverino,nounix"
+    options "username=#{node['DevHost']['user']},password=#{node['DevHost']['password']},uid=#{node['vagrant-samba']['folder']['uid']},gid=#{node['vagrant-samba']['folder']['gid']},rw,noserverino,nounix"
     action [:mount]
     ignore_failure true
 end
